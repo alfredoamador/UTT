@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "RestaurantApp": {
+    "restauranAPP": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/RestaurantApp",
+            "outputPath": "dist/restauranAPP",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,9 +23,15 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+              
+            ]
           },
           "configurations": {
             "production": {
@@ -50,18 +56,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "RestaurantApp:build"
+            "browserTarget": "restauranAPP:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "RestaurantApp:build:production"
+              "browserTarget": "restauranAPP:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "RestaurantApp:build"
+            "browserTarget": "restauranAPP:build"
           }
         },
         "test": {
@@ -95,7 +101,7 @@
         }
       }
     },
-    "RestaurantApp-e2e": {
+    "restauranAPP-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +109,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "RestaurantApp:serve"
+            "devServerTarget": "restauranAPP:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "RestaurantApp:serve:production"
+              "devServerTarget": "restauranAPP:serve:production"
             }
           }
         },
@@ -123,5 +129,5 @@
       }
     }
   },
-  "defaultProject": "RestaurantApp"
+  "defaultProject": "restauranAPP"
 }
